@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.home-section {
+  background-image: url("../public/bg.jpg");
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #fefbf7;
+}
+
+.home-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.273);
+}
+
+.hover-element {
+  position: relative;
+}
+
+.hover-elements {
+  position: absolute;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  color: black;
+  transform: translateY(20px);
+  opacity: 0;
+  width: max-content;
+  transition: 0.3s ease-in-out;
+}
+
+.hover-element:hover .hover-elements {
+   transform: translateY(0px);
+   opacity: 1;
+}
+
+.text-user-select-none {
+  user-select: none;
+}
+
+.some-blue-bg {
+  background: #1a8ec1;
+}
+
+.some-blue-text {
+  color: #1a8ec1;
 }
